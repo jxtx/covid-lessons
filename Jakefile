@@ -51,7 +51,15 @@ rule(`dist/%-slides.mp4`, `dist/%-slides.script`, function() {
 })
 
 /** Default task: build HTML files */
-task('default', ['dist/sars2-biology-slides.html'])
+task('slides-html', ['dist/sars2-biology-slides.html'])
 
-/** Default task: build video files */
-task('video', ['dist/sars2-biology-slides.mp4'])
+/** Build HTML files */
+task('slides-pdf', ['dist/sars2-biology-slides.pdf'])
+
+/** Build video files */
+task('slides-video', ['dist/sars2-biology-slides.mp4'])
+
+/** Build vuepress site that provides overall index */
+task('site', ['slides-html', 'slides-pdf'], function() {
+  exec("vuepress build src")
+})
