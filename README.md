@@ -1,5 +1,7 @@
 # SARS-NCOV-2 / COVID-19 generated lectures
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d33035ea-4760-443f-bef7-c1ee3431dc51/deploy-status)](https://app.netlify.com/sites/covid19-lessons/deploys)
+
 Framework to generate HTML, slides (HTML, pdf, images) and narrated videos 
 (using ari) from markdown.
 
