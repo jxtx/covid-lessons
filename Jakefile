@@ -1,21 +1,32 @@
-const { rule } = require('jake');
-const exec = require('child_process').execSync;
+const { task, rule, Task } = require('jake')
+const exec = require('child_process').execSync
+
+/**
+ * Build rules for making HTML and PDF slides from annotated Markdown,
+ * extracting narration scripts, and building videos (with ari).
+ */
 
 /** Build CSS to be used by Marp HTML presentations */
 rule('dist/%.css', 'lib/%.scss', function() {
   exec(`node-sass \
           --importer node_modules/node-sass-package-importer/dist/cli.js \
           ${this.source} > ${this.name}`);
-});
+})
 
-/** Build slides HTML or PDF from Markdown with Marp */
-["html", "pdf"].forEach( type =>
-  rule(`dist/%-slides.${type}`, 'src/%.md', ['dist/local.css'], function() {
-    exec(` marp --engine ./lib/marp-engine.js \
-            --theme dist/local.css \
-            --html ${this.source} -o ${this.name} 2>&1`)
-  })
-);
+/** Build slides HTML from Markdown with Marp */
+rule(`dist/%-slides.html`, 'src/%.md', ['dist/local.css'], function() {
+  exec(` marp --engine ./lib/marp-engine.js \
+          --theme dist/local.css \
+          --html ${this.source} -o ${this.name} 2>&1`)
+})
+
+/** Build slides PDF */
+rule(`dist/%-slides.pdf`, 'src/%.md', ['dist/local.css'], function() {
+  exec(` marp --engine ./lib/marp-engine.js \
+          --theme dist/local.css \
+          --html ${this.source} -o ${this.name} 2>&1`)
+})
+
 
 /** Build slide images */
 rule(`dist/%-slides.001.png`, 'src/%.md', ['dist/local.css'], function() {
@@ -25,6 +36,22 @@ rule(`dist/%-slides.001.png`, 'src/%.md', ['dist/local.css'], function() {
           --html ${this.source} --images png -o ${dest} 2>&1`)
 })  
 
+/** Build script from HTML */
+rule(`dist/%-slides.script`, `dist/%-slides.html`, function() {
+  exec(`node lib/extract-script-from-html.js ${this.source} > ${this.name}`)
+})
+
+/** Build video from images and script using ari */
+rule(`dist/%-slides.mp4`, `dist/%-slides.script`, function() {
+  // Little hack to allow pattern based dependency -- ensures images exist
+  let basename = this.name.substring( 0, this.name.lastIndexOf(".") )
+  jake.attemptRule( basename + ".001.png", jake.currentNamespace )
+  // Run ari
+  exec(`./scripts/run_ari_spin.R ${this.name} ${this.source} ${basename}.*.png`)
+})
 
 /** Default task: build HTML files */
-task('default', ['dist/sars2-biology-slides.html']);
+task('default', ['dist/sars2-biology-slides.html'])
+
+/** Default task: build video files */
+task('video', ['dist/sars2-biology-slides.mp4'])

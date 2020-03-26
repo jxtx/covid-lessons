@@ -11,6 +11,7 @@ title: "Molecular Biology of SARS-COV-2"
 ## A quick overview of coronavirus molecular biology
 
 Given the current situation we will continue this class using SARS-COV-2 as example for all further analyses. So far we have covered variant calling and genome assembly. Next we will be looking into RNAseq. Since SARS-COV-2 is a positive strand RNA virus that pretends to be a typical human transcript, it is a great system to learn about RNAseq. But first we need to learn about the coronavirus molecular biology. This is what we will do in this lecture.
+{ .speak }
 
 The following summary is based on these publications:
 
