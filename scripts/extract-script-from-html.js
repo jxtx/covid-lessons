@@ -11,7 +11,7 @@ $("section").each( (slideIndex, slideElement) => {
     // console.log( slideIndex, slideElement )
     textForSlide = []
     $(slideElement).find(".speak, .speak-only").each( (_, el) => {
-        textForSlide.push( $(el).text() )
+        textForSlide.push( $(el).text().replace( /\n/g, " " ) )
     })
     console.log( textForSlide.join( ". " ) )
 })

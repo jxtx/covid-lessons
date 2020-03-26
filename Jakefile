@@ -38,7 +38,7 @@ rule(`dist/%-slides.001.png`, 'src/%.md', ['dist/local.css'], function() {
 
 /** Build script from HTML */
 rule(`dist/%-slides.script`, `dist/%-slides.html`, function() {
-  exec(`node lib/extract-script-from-html.js ${this.source} > ${this.name}`)
+  exec(`node ./scripts/extract-script-from-html.js ${this.source} > ${this.name}`)
 })
 
 /** Build video from images and script using ari */

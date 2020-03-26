@@ -25,7 +25,8 @@ The following summary is based on these publications:
 
 ## Genome organization
 
-All coronaviruses contain non-segmented positive strand RNA genome approx. 30 kb in length. It is invariably 5'-leader-UTR-replicase-S-E-M-N-3'UTR-poly(A). In addition, it contains a variety of accessory proteins interspersed throughout the genome:
+All coronaviruses contain non-segmented positive strand RNA genome approx. 30 kb in length. It is invariably 5'-leader-UTR-replicase-S-E-M-N-3'UTR-poly(A). In addition, it contains a variety of accessory proteins interspersed throughout the genome.
+{ .speak }
 
 ![](https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-1-4939-2438-7_1/MediaObjects/317916_1_En_1_Fig1_HTML.gif)
 { .left }
@@ -36,6 +37,7 @@ Genomic organization of representative α, β, and γ CoVs. An illustration of t
 ---
 
 The long replicase gene encodes a number of non-structural proteins (nsps) and occupies 2/3 or the genome. Because of -1 ribosomal frameshifting within ORFab approx. in 25% of the cases polyprotein pp1ab is produced in place of pp1a. pp1a encodes 11 nsps while pp1ab encodes 15. 
+{ .speak }
 
 ![](https://www.annualreviews.org/na101/home/literatum/publisher/ar/journals/content/virology/2015/virology.2015.2.issue-1/annurev-virology-100114-055218/20151024/images/large/vi20265.f1.jpeg)
 { .left }
@@ -48,6 +50,7 @@ Coronavirus genome structure and gene expression. (a) Coronavirus genome structu
 ## Virion structure
 
 Coronovirus is a spherical particle approx. 125 nm in diameter. It is covered with S-protein projections giving it an appearance of solar corona - hence the term coronavirus. Inside the envelope is nucleocapsid that has helical symmetry far more typical of (-)-strand RNA viruses. There are four main structure proteins: spike (S), membrane (M), envelope (E), and nucleocapsid (N). 
+{ .speak }
 
 ![](https://ars.els-cdn.com/content/image/1-s2.0-S0065352706660053-gr1.jpg)
 
@@ -56,6 +59,7 @@ Coronovirus is a spherical particle approx. 125 nm in diameter. It is covered wi
 --- 
 
 The mature S protein is trimer of two subunits: S1 and S2. The two subunits are produced from a single S-precursor by host proteases (see [Kirchdoerfer:2016](http://dx.doi.org/10.1038/nature17200); this however is not the case for all coronaviruses such as SARS-CoV). S1 forms the receptor-binding domain, while S2 forms the stalk. 
+{ .speak }
 
 M protein is the most abundant structural components of the virion and determines its shape. It possibly exists as a dimer.
 
@@ -68,12 +72,14 @@ N proteins forms the nucleocapsid. It N- and C-terminal domains are capable of R
 ## Entering the cell
 
 Virion attaches to the cells as a result of interaction between S-protein and a cellular receptor. In case of SARS-CoV-2 (as is in SARS-CoV) angiotensin converting enzyme 2 (ACE2) serves as the receptor binding to C-terminal portion of S1 domain. After receptor binding S protein is cleaved at two sites within the S2 subdomain. The first cleavage separates receptor-binding domain of S from membrane fusion domain. The second cleavage (at S2') exposes the fusion peptide. The SARS-CoV-2 is different from SARS-CoV in that it contains a [furin](https://en.wikipedia.org/wiki/Furin) cleavage site that is processed during viral maturation within endoplasmatic reticulum (ER; see [Walls:2020](http://dx.doi.org/10.1016/j.cell.2020.02.058)). The fusion peptide inserts into the cellular membrane and triggers joining on the two heptad regions with S2 forming antiparallel six-helix bundle resulting in fusion and release of the genome into the cytoplasm. 
+{ .speak }
 
 ---
 
 ## Replication
 
-The above figure shows that in addition to the full length (+)-strand genome there is a number of (+)-strand subgenomic RNAs corresponding to 3'-end of the complete viral sequence. All of these *subgenomic* RNAs (sgRNAs) share the same leader sequence that is present only once at the extreme 5'-end of the viral genome. These RNAs are produced via discontinuous RNA synthesis when the RNA-dependent RNA-polymerase (RdRp) switches template:
+The above figure shows that in addition to the full length (+)-strand genome there is a number of (+)-strand subgenomic RNAs corresponding to 3'-end of the complete viral sequence. All of these *subgenomic* RNAs (sgRNAs) share the same leader sequence that is present only once at the extreme 5'-end of the viral genome. These RNAs are produced via discontinuous RNA synthesis when the RNA-dependent RNA-polymerase (RdRp) switches template.
+{ .speak }
 
 <iframe class="left" title="vimeo-player" src="https://player.vimeo.com/video/133088346" width="640" height="480" frameborder="0" allowfullscreen></iframe>
 
@@ -82,7 +88,8 @@ Model for the formation of genome high-order structures regulating N gene transc
 
 ---
 
-Furthermore [Sola:2015](https://www.annualreviews.org/doi/full/10.1146/annurev-virology-100114-055218)) suggest propose the coronavirus transcription model in which transcription initiation complex forms at the 3'-end of (+)-strand genomic RNA:
+Furthermore [Sola:2015](https://www.annualreviews.org/doi/full/10.1146/annurev-virology-100114-055218)) suggest propose the coronavirus transcription model in which transcription initiation complex forms at the 3'-end of (+)-strand genomic RNA.
+{ .speak }
 
 ![](https://www.annualreviews.org/na101/home/literatum/publisher/ar/journals/content/virology/2015/virology.2015.2.issue-1/annurev-virology-100114-055218/20151024/images/large/vi20265.f3.jpeg)
 { .left }
@@ -95,10 +102,13 @@ Three-step model of coronavirus transcription. (1) Complex formation. Proteins b
 ## So what can we do?
 
 Given this information we ask the following questions:
+{ .speak }
 
 1. Can we reconstruct individual transcripts given the SARS-CoV data?
 2. Can we observe and confirm the ribosomal frameshifting?
 3. Can we identify secondary structures within SARS-CoV RNAs?
 4. .... Suggest your own question ....
+{ .speak }
 
 Yes, we can do all these things. The next lecture will start with question I: transcript reconstruction. 
+{ .speak }
