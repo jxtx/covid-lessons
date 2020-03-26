@@ -13,6 +13,7 @@
     "watch": "^1.0.2"
   },
   "scripts": {
-    "build": "jake site"
+    "build": "jake slides-html slides-pdf site",
+    "build-netlify": "jake slides-html site"
   }
 }

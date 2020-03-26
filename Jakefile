@@ -61,6 +61,6 @@ task('slides-pdf', ['dist/sars2-biology-slides.pdf'])
 task('slides-video', ['dist/sars2-biology-slides.mp4'])
 
 /** Build vuepress site that provides overall index */
-task('site', ['slides-html', 'slides-pdf'], function() {
+task('site', function() {
   exec("vuepress build src")
 })
