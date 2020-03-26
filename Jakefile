@@ -8,6 +8,7 @@ const exec = require('child_process').execSync
 
 /** Build CSS to be used by Marp HTML presentations */
 rule('dist/%.css', 'lib/%.scss', function() {
+  exec(`mkdir -p dist`)
   exec(`node-sass \
           --importer node_modules/node-sass-package-importer/dist/cli.js \
           ${this.source} > ${this.name}`);
