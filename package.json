@@ -7,6 +7,7 @@
     "docopt": "^0.6.2",
     "github-markdown-css": "^4.0.0",
     "jake": "^10.4.6",
+    "js-yaml": "^3.13.1",
     "markdown-it": "^10.0.0",
     "markdown-it-attrs": "^3.0.2",
     "node-sass": "^4.13.1",

@@ -39,14 +39,15 @@ rule(`dist/%-slides.001.png`, 'src/%.md', ['dist/local.css'], function() {
 
 /** Build script from HTML */
 rule(`dist/%-slides.script`, `dist/%-slides.html`, function() {
-  exec(`node ./scripts/extract-script-from-html.js ${this.source} > ${this.name}`)
+  exec(`node ./scripts/extract-script-from-html.js ${this.source} \
+          --translate=script-rewrite-words.yaml > ${this.name}`)
 })
 
 /** Build video from images and script using ari */
 rule(`dist/%-slides.mp4`, `dist/%-slides.script`, function() {
   // Little hack to allow pattern based dependency -- ensures images exist
   let basename = this.name.substring( 0, this.name.lastIndexOf(".") )
-  jake.attemptRule( basename + ".001.png", jake.currentNamespace )
+  jake.attemptRule( basename + ".001.png", jake.currentNamespace ).execute()
   // Run ari
   exec(`./scripts/run_ari_spin.R ${this.name} ${this.source} ${basename}.*.png`)
 })
