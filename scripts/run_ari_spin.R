@@ -18,4 +18,6 @@ if ( length(script) != length(images) ) {
 }
 
 # Run ari spin to generate audio and combine to movie
-ari_spin( images, script, output, voice="Joanna" )
+ari_spin( images, script, output, 
+          voice="Joanna", 
+          tts_args = list(ssml = TRUE) )

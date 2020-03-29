@@ -30,5 +30,6 @@ $("section").each( (slideIndex, slideElement) => {
     $(slideElement).find(".speak, .speak-only").each( (_, el) => {
         textForSlide.push( $(el).text().replace( /\n/g, " " ) )
     })
-    console.log( translate( textForSlide.join( ". " ) ) )
+    // console.log( translate( textForSlide.join( ". " ) ) )
+    process.stdout.write(`<speak>${translate( textForSlide.join( ". " ) )}</speak>\n` )
 })

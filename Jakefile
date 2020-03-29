@@ -16,23 +16,24 @@ rule('dist/%.css', 'lib/%.scss', function() {
 
 /** Build slides HTML from Markdown with Marp */
 rule(`dist/%-slides.html`, 'src/%.md', ['dist/local.css'], function() {
-  exec(` marp --engine ./lib/marp-engine.js \
+  exec(`marp --engine ./lib/marp-engine.js \
           --theme dist/local.css \
           --html ${this.source} -o ${this.name} 2>&1`)
 })
 
 /** Build slides PDF */
 rule(`dist/%-slides.pdf`, 'src/%.md', ['dist/local.css'], function() {
-  exec(` marp --engine ./lib/marp-engine.js \
-          --theme dist/local.css \
-          --html ${this.source} -o ${this.name} 2>&1`)
+  exec(`AWS_LAMBDA_FUNCTION_NAME=trickpuppeteer \
+          marp --engine ./lib/marp-engine.js \
+            --theme dist/local.css \
+            --html ${this.source} -o ${this.name} 2>&1`)
 })
 
 
 /** Build slide images */
 rule(`dist/%-slides.001.png`, 'src/%.md', ['dist/local.css'], function() {
   let dest = this.name.replace(".001", "");
-  exec(` marp --engine ./lib/marp-engine.js \
+  exec(`marp --engine ./lib/marp-engine.js \
           --theme dist/local.css \
           --html ${this.source} --images png -o ${dest} 2>&1`)
 })  
