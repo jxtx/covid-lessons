@@ -9,7 +9,7 @@
     "github-markdown-css": "^4.0.0",
     "jake": "^10.4.6",
     "js-yaml": "^3.13.1",
-    "markdown-it": "^10.0.0",
+    "markdown-it": "^12.3.2",
     "markdown-it-attrs": "^3.0.2",
     "node-sass": "^4.13.1",
     "node-sass-package-importer": "^5.3.2",
